@@ -3,7 +3,7 @@ import type { TracksTableProps } from "../definitions/types";
 
 export function BlogsComponent({ data }: TracksTableProps) {
   const { openTab } = useTabs();
-
+  if (!data.length) return <p>No Data</p>;
   return (
     <>
       {data.map((track) => (

@@ -7,7 +7,8 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import type { SortingState } from "@tanstack/react-table";
-import type { Track, TracksTableProps } from "../definitions/types";
+import type { Track } from "../definitions/types";
+import type { TracksTableProps } from "../definitions/types";
 import { useMemo, useState } from "react";
 import "./styles.css";
 import { ArrowDownNarrowWide, ArrowUpNarrowWide } from "lucide-react";
@@ -57,6 +58,8 @@ export function BlogsTable({ data }: TracksTableProps) {
     getSortedRowModel: getSortedRowModel(),
     getCoreRowModel: getCoreRowModel(), //row
   });
+
+  if (!data) return <p>No Data received</p>;
 
   return (
     <table>

@@ -65,9 +65,9 @@ export default function Blogs() {
           }}
         >
           {viewType === "list" ? (
-            <BlogsComponent data={data?.tracksForHome} />
+            <BlogsComponent data={data?.tracksForHome ?? []} />
           ) : (
-            <BlogsTable data={data?.tracksForHome} />
+            <BlogsTable data={data?.tracksForHome ?? []} />
           )}
         </div>
       </div>
