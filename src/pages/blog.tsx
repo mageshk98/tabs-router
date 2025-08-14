@@ -3,6 +3,7 @@ import { gql } from "../__generated__";
 import { useQuery } from "@apollo/client";
 import QueryResult from "../components/queryresult";
 import { useTabs } from "../hooks/useTabs";
+import "./styles.css";
 
 export const GetTrack = gql(`
   query GetTrack($trackId: ID!) {
@@ -46,7 +47,10 @@ export default function Blog() {
     <QueryResult error={error} loading={loading} data={data}>
       {data?.track && (
         <div style={{ padding: "20px" }}>
-          <button onClick={() => openTab("blogs", "Blogs", "/blogs")}>
+          <button
+            className="backBtn"
+            onClick={() => openTab("blogs", "Blogs", "/blogs")}
+          >
             Back to Blogs
           </button>
           <h1>{data.track.title}</h1>

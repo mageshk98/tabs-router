@@ -6,6 +6,7 @@ import { TabsProvider } from "./contexts/TabsContext";
 import Home from "./pages/home";
 import Blogs from "./pages/blogs";
 import Blog from "./pages/blog";
+import { Bird } from "lucide-react";
 
 function AppContent() {
   return (
@@ -15,7 +16,7 @@ function AppContent() {
       </div>
       <div style={{ flex: 1 }}>
         <TabBar />
-        <div style={{ flex: 1, padding: "20px" }}>
+        <div style={{ height: "100%", padding: "20px" }}>
           <Routes>
             <Route
               path="/"
@@ -26,8 +27,15 @@ function AppContent() {
                     alignItems: "center",
                     justifyContent: "center",
                     height: "100%",
+                    flexDirection: "column",
                   }}
                 >
+                  <Bird
+                    size={128}
+                    color="#b32bc5"
+                    strokeWidth={1.75}
+                    absoluteStrokeWidth
+                  />
                   Welcome! Select a page from the sidebar.
                 </div>
               }
