@@ -1,42 +1,128 @@
+body {
+  margin: 0;
+  color: #fff;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  background: #020917;
+}
+
+html,
+body,
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.title {
+  margin: 0;
+  height: 60px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tabs-manager-wrapper {
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.tabs-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, auto) 1fr;
+  border: 1px solid gray;
+  height: 100%;
 }
 
-.card {
-  padding: 2em;
+.tabs-sidebar {
+  border-right: 1px solid gray;
+  padding: 15px;
+  overflow: hidden;
 }
 
-.read-the-docs {
-  color: #888;
+/* Side bar styles */
+.file-list-wrapper {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+  overflow: auto;
+  height: 100%;
+}
+
+.file-list-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-block-end: 10px;
+  padding: 5px;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+.file-list-item:hover {
+  background-color: rgba(240, 248, 255, 0.789);
+  color: rgb(6, 60, 146);
+  cursor: pointer;
+}
+
+/* Tabs-panel stles */
+
+.tabs-panel {
+  max-height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  overflow: auto hidden;
+  width: 100%;
+  height: 50px;
+  padding-inline: 10px;
+  border-block-end: 1px solid gray;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  background-color: #020917;
+}
+
+.tabs-panel::after {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+  inset-inline-end: 0;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+  cursor: pointer;
+  height: 30px;
+  transition: background-color 0.3s ease;
+  background-color: aliceblue;
+  color: #020917;
+  gap: 10px;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+
+.closeall {
+  background-color: rgb(211, 53, 18);
+  color: #fff;
+  position: sticky;
+  left: 0;
+}
+
+.tabs-content {
+  height: 100%;
+}
+
+.tab.active {
+  background-color: rgb(255, 255, 255);
+  color: rgb(13, 184, 127);
+}
+
+.emptyState {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

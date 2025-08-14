@@ -1,0 +1,125 @@
+.title {
+  font-weight: 600;
+  font-size: 24px;
+  padding-inline: 20px;
+  padding-block-start: 30px;
+}
+
+.tabs-panel {
+  max-height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  overflow: auto hidden;
+  width: 100%;
+  height: 50px;
+  padding-inline: 10px;
+  border-block-end: 1px solid gray;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  background-color: #020917;
+}
+
+.tabs-panel::after {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+  inset-inline-end: 0;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+  cursor: pointer;
+  height: 30px;
+  transition: background-color 0.3s ease;
+  background-color: aliceblue;
+  color: #020917;
+  gap: 10px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  max-width: 200px;
+}
+
+.tabName {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.closeall {
+  background-color: rgb(211, 53, 18);
+  color: #fff;
+  position: sticky;
+  left: 0;
+}
+
+.tabs-content {
+  height: 100%;
+}
+.tab.active {
+  background-color: rgb(255, 255, 255);
+  color: rgb(13, 184, 127);
+}
+
+nav {
+  padding: 15px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.nav-item:hover {
+  background-color: aliceblue;
+  color: #020917;
+}
+
+/* table styles */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead {
+  background-color: #78ff8d29;
+}
+
+th,
+td {
+  padding: 8px 12px;
+  border: 1px solid #949494bd;
+}
+
+th {
+  text-align: left;
+  cursor: pointer;
+  user-select: none;
+}
+
+tbody > tr:nth-child(even) {
+  background-color: #00040bdc;
+}
+
+tbody > tr:hover {
+  background-color: #1063a871;
+}
+
+.table-head {
+  text-align: start;
+}
+
+.table-title-link {
+  color: #4fe4b4;
+  margin: 0;
+  cursor: pointer;
+}
